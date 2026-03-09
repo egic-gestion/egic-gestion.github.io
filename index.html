@@ -270,6 +270,41 @@
     .cta-block h2 { color: var(--white-pure); font-size: clamp(32px, 5.6vw, 50px); font-weight: 300; max-width: 780px; margin: 0 auto 14px; }
     .cta-block .eyebrow { color: var(--gold-muted); margin-bottom: 14px; display: block; }
     .cta-sub    { color: var(--gray-light); max-width: 820px; margin: 0 auto 28px; font-size: 18px; font-weight: 300; line-height: 1.5; }
+    .contact-direct {
+      width: min(760px, 100%);
+      margin: 0 auto 24px;
+      padding: 16px 18px;
+      border: 1px solid var(--border-gold);
+      background: rgba(17,17,17,0.58);
+      text-align: center;
+    }
+    .contact-direct-title {
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold-primary);
+      margin-bottom: 8px;
+      font-weight: 400;
+    }
+    .contact-direct-name {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 28px;
+      line-height: 1.05;
+      color: var(--white-pure);
+      margin-bottom: 4px;
+    }
+    .contact-direct-role {
+      color: var(--gray-light);
+      font-size: 14px;
+      margin-bottom: 8px;
+      font-weight: 300;
+    }
+    .contact-direct-phone {
+      color: var(--gold-bright);
+      font-size: 20px;
+      letter-spacing: 1px;
+      font-weight: 400;
+    }
     .author-line{ margin-top: 24px; color: var(--gray-mid); font-size: 13px; font-weight: 300; }
     .contact-form {
       width: min(980px, 100%);
@@ -363,6 +398,12 @@
     }
     .contact-status.success { color: #C9A84C; }
     .contact-status.error { color: #f3b0b0; }
+    .contact-direct-note {
+      color: var(--gray-mid);
+      font-size: 13px;
+      text-align: center;
+      font-weight: 300;
+    }
     @keyframes contactSpin { to { transform: rotate(360deg); } }
 
     /* ─── FOOTER ────────────────────────────────────────────── */
@@ -480,6 +521,9 @@
       .kpi-star-grid { grid-template-columns: repeat(2, 1fr); }
       .partner-grid { grid-template-columns: 1fr; }
       .cta-sub { font-size: 18px; margin-bottom: 22px; }
+      .contact-direct { padding: 14px 12px; margin-bottom: 18px; }
+      .contact-direct-name { font-size: 24px; }
+      .contact-direct-phone { font-size: 18px; }
       .author-line { font-size: 13px; }
       .contact-form { width: 100%; gap: 12px; }
       .contact-grid { gap: 10px; }
@@ -712,6 +756,12 @@
           <span class="eyebrow">DAR EL SIGUIENTE PASO</span>
           <h2>El estándar de administración que el mercado inmobiliario de Yucatán necesita.</h2>
           <p class="cta-sub">Contáctanos para diseñar una propuesta personalizada para tu desarrollo.</p>
+          <div class="contact-direct" aria-label="Contacto directo">
+            <p class="contact-direct-title">Prefieres contacto directo</p>
+            <p class="contact-direct-name">Jonathan P.</p>
+            <p class="contact-direct-role">Asesor comercial EGIC</p>
+            <p class="contact-direct-phone">WhatsApp: 9992644945</p>
+          </div>
           <form id="contact-form" class="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
             <input type="hidden" name="access_key" value="9d2a2cd1-f9d0-49f3-a943-e64dc17b1f86" />
             <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
@@ -748,6 +798,7 @@
                 <span class="contact-spinner" aria-hidden="true"></span>
                 <span class="contact-btn-label">Solicitar propuesta<br />personalizada</span>
               </button>
+              <p class="contact-direct-note">También puedes escribir directamente al asesor comercial: 9992644945</p>
               <p id="contact-status" class="contact-status" aria-live="polite"></p>
             </div>
           </form>
