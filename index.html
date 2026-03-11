@@ -1183,16 +1183,33 @@
     /* ── MODAL ───────────────────────────────────────────────── */
     const overlay = document.getElementById('modal-overlay');
     const content = document.getElementById('modal-content');
+    const panel   = document.getElementById('modal-panel');
 
     let modalOpen = false;
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    const resetModalScroll = () => {
+      if (panel) {
+        panel.scrollTop = 0;
+        panel.scrollTo(0, 0);
+      }
+      if (content) {
+        content.scrollTop = 0;
+        content.scrollTo(0, 0);
+      }
+    };
     function openModal(key) {
       content.innerHTML = modalContents[key] || '';
       overlay.classList.add('active');
       document.body.style.overflow = 'hidden';
-      // Reset scroll so every modal opens at the top
-      const panel = document.getElementById('modal-panel');
-      if (panel) panel.scrollTop = 0;
-      content.scrollTop = 0;
+      // Reset scroll so every modal opens at the top (after content is rendered)
+      resetModalScroll();
+      requestAnimationFrame(() => {
+        resetModalScroll();
+        requestAnimationFrame(resetModalScroll);
+      });
+      setTimeout(resetModalScroll, 60);
       if (!modalOpen) {
         modalOpen = true;
         if (!history.state || !history.state.modal) {
@@ -1203,6 +1220,7 @@
     function closeModal(fromPop = false) {
       overlay.classList.remove('active');
       document.body.style.overflow = '';
+      resetModalScroll();
       if (modalOpen) modalOpen = false;
       if (!fromPop && history.state && history.state.modal) {
         history.back();
