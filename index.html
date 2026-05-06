@@ -493,7 +493,8 @@
       .stats            { grid-template-columns: repeat(3, 1fr); }
       .stat             { border-bottom: none; border-right: 1px solid var(--gold-muted); }
       .stat:last-child  { border-right: none; }
-      .phases-compact   { grid-template-columns: repeat(3, 1fr); }
+      .phases-compact   { grid-template-columns: repeat(4, 1fr); }
+      .phase-row-name   { font-size: 14px; }
       .kpi-star-grid    { grid-template-columns: repeat(4, 1fr); }
       .cards-grid       { grid-template-columns: repeat(2, 1fr); }
       .dept-grid        { grid-template-columns: repeat(2, 1fr); }
@@ -789,25 +790,32 @@
       <div class="container">
         <header class="section-header">
           <span class="section-label">04</span>
-          <h2>Tres fases para implementar EGIC</h2>
+          <h2>Cuatro fases para implementar EGIC</h2>
         </header>
         <div class="phases-compact">
           <div class="phase-row">
             <span class="phase-row-num">1</span>
             <div>
-              <div class="phase-row-name">Diagnóstico y diseño estratégico</div>
+              <div class="phase-row-name">Revisión de documentación legal</div>
               <div class="phase-row-time">1–2 meses</div>
             </div>
           </div>
           <div class="phase-row">
             <span class="phase-row-num">2</span>
             <div>
+              <div class="phase-row-name">Diagnóstico y diseño estratégico</div>
+              <div class="phase-row-time">1–2 meses</div>
+            </div>
+          </div>
+          <div class="phase-row">
+            <span class="phase-row-num">3</span>
+            <div>
               <div class="phase-row-name">Transición y configuración operativa</div>
               <div class="phase-row-time">2–3 meses</div>
             </div>
           </div>
           <div class="phase-row">
-            <span class="phase-row-num">3</span>
+            <span class="phase-row-num">4</span>
             <div>
               <div class="phase-row-name">Operación y mejora continua</div>
               <div class="phase-row-time">Permanente</div>
@@ -1027,9 +1035,20 @@
 
       plan: `
         <h2>Plan de implementación</h2>
-        <div class="timeline">
+        <div class="timeline">          
           <article class="phase">
             <span class="phase-badge">1</span>
+            <h3>Revisión de documentación legal</h3>
+            <p class="phase-time">1–2 meses</p>
+            <ul>
+              <li>Diagnóstico exhaustivo y recopilación documental</li>
+              <li>Análisis jurídico</li>
+              <li>Creación de protocolos de entrega-recepción</li>
+              <li>Revisión y actualización de los estatutos y reglamentos</li>
+            </ul>
+          </article>
+            <article class="phase">
+            <span class="phase-badge">2</span>
             <h3>Diagnóstico y diseño estratégico</h3>
             <p class="phase-time">1–2 meses</p>
             <ul>
@@ -1040,7 +1059,7 @@
             </ul>
           </article>
           <article class="phase">
-            <span class="phase-badge">2</span>
+            <span class="phase-badge">3</span>
             <h3>Transición y configuración operativa</h3>
             <p class="phase-time">2–3 meses</p>
             <ul>
@@ -1051,7 +1070,7 @@
             </ul>
           </article>
           <article class="phase active">
-            <span class="phase-badge">3</span>
+            <span class="phase-badge">4</span>
             <h3>Operación y mejora continua</h3>
             <p class="phase-time">Permanente</p>
             <ul>
